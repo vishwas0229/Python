@@ -1,29 +1,33 @@
 # Python Exercises
 
-A small collection of Python exercise scripts organized by module.
+A small collection of Python exercise scripts organized by assignment.
 
-Project structure
+## Project Structure
 
-- [Module-1/](Module-1/): contains exercise scripts
-  - task-1.py
-  - task-2.py
+- [assignment-1/](assignment-1/): Basic input/output exercises
+  - task-1.py: Simple calculator (addition, subtraction, multiplication, division)
+  - task-2.py: Name greeting program
 
-Prerequisites
+- [assignment-2/](assignment-2/): Control flow exercises
+  - task-1.py: Odd/even number checker
+  - task-2.py: Sum of numbers from 1 to 50
+
+## Prerequisites
 
 - Python 3.8 or newer
 
-Usage
+## Usage
 
 Run individual tasks from the workspace root. Examples:
 
 ```bash
-python3 Module-1/task-1.py
-python3 Module-1/task-2.py
+python3 assignment-1/task-1.py
+python3 assignment-1/task-2.py
+python3 assignment-2/task-1.py
+python3 assignment-2/task-2.py
 ```
 
-Notes
+## Notes
 
-- See the files in `Module-1/` for each task's details and expected behavior.
+- See the files in each assignment folder for task details and expected behavior.
 - License: see `LICENSE` at repository root.
-
-If you'd like a more detailed README (examples, tests, or contribution notes), tell me what to include and I will expand it.
