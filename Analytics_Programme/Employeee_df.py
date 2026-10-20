@@ -1,40 +1,39 @@
-import pandas as pd
-import random as np
-import string as st
 import os 
-n=2
-data=[]
-display=[2]
+import random
+import string
+import pandas as pd
 
-
+n = 10
+display = [1, 4, 6]
 
 if not os.path.exists("data.csv"):
-    for i in range(0,n):
-        id = np.choices(st.digits, k = 5)
-        np.shuffle(id)
-    
+    data = []
+    for i in range(n):
+        emp_id = random.choices(string.digits, k=5)
         info = {
-                'ID' : "".join(id),
-                'Name' : input("Enter Name : "),
-                'Age' : int(input("Enter Age : ")),
-                'Dept' : input("Enter Department : "),
-                'Salary': int(input("Enter Salary : "))
-            }
+            'ID': int("".join(emp_id)), 
+            'NAME': input("Enter Name: "),
+            'Age': int(input("Enter Age: ")),
+            'Dept': input("Enter Department: "),
+            'Salary': int(input("Enter Salary: "))
+        }
         data.append(info)
-    df = pd.DataFrame(data)
-    df.to_csv("data.csv", index = False)
-def show_5_data():
-    count = 0
-    while count < 2:
-        df=pd.read_csv("data.csv")
-        print([x.item() if hasattr(x, 'item') else x for x in df.iloc[count]])
-        count += 1
-def show_given_data(): 
-    for i in display:
-        df=pd.read_csv("data.csv")
-        print([x.item() if hasattr(x, 'item') else x for x in df.iloc[i-1]]) 
-show_5_data()
-show_given_data()
+    pd.DataFrame(data).to_csv("data.csv", index=False)
+
+df = pd.read_csv("data.csv")
 
 
+print("\nThe first five data records are:\n", df.head(5))
+print("\nThe last five data records are:\n", df.tail(5))
 
+
+print("\nThe data records of serial numbers 1, 4, 6 are:\n", df.iloc[[i-1 for i in display]])
+
+
+df = df.rename(columns={'NAME': 'E_NAME'})
+print("\nAfter renaming column:\n", df)
+
+
+df['ID'] = df['ID'].astype(str)
+df = df.rename(columns={'ID': 'E_ID'}) 
+print("\nAfter changing ID to string:\n", df)

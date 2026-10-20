@@ -1,3 +1,6 @@
-ID,Name,Age,Dept,Salary
-41829,Rahul,22,IT,2002
-06089,Ananya,22,CSW,20000
+Employee_ID,Name,Department,Salary
+101,John Doe,IT,75000
+102,Jane Smith,HR,62000
+103,Alex Jones,Finance,81000
+104,Emily Brown,Marketing,58000
+105,Michael Green,Operations,69000
